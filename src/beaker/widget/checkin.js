@@ -34,14 +34,22 @@ document.addEventListener('deviceready', function () {
     
         function startScan() { 
             if (window.beaker) {
-                setInterval(function () { 
+                window.beaker.scanner = setInterval(function () {
                     evothings.ble.startScan(onEncounterDevice, function(error) { console.error("Error" + error); });
                     setTimeout(evothings.ble.stopScan, 3000);
                 }, window.beaker.interval);
             }
         }    
 
+        function stopScan() {
+            if (window.beaker && window.beaker.scanner) {
+                clearInterval(window.beaker.scanner);
+                delete window.beaker.scanner;
+            }
+        }
+
         cordova.plugins.backgroundMode.enable();
         cordova.plugins.backgroundMode.onactivate = startScan;
+        cordova.plugins.backgroundMode.ondeactivate = stopScan;
     }
 }, false);
