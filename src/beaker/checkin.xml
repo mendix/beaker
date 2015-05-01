@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="beaker.widget.checkin" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>checkin</name>
+  <description>Starts a continuous scan to search for a BLE device</description>
+
+  <icon></icon>
+
+  <properties>
+        <property key="interval" type="integer" required="true" defaultValue="5000">
+            <caption>Interval</caption>
+            <category>General</category>
+            <description>Interval in ms to scan for devices</description>
+        </property>
+        <property key="deviceAddress" type="string" required="true" defaultValue="">
+            <caption>Device Address</caption>
+            <category>General</category>
+            <description>MAC address of the device to look for</description>
+        </property>
+   </properties>
+</widget>
+
+
