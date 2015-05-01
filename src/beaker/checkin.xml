@@ -6,7 +6,7 @@
   <icon></icon>
 
   <properties>
-        <property key="interval" type="integer" required="true" defaultValue="5000">
+        <property key="interval" type="integer" required="true" defaultValue="300000">
             <caption>Interval</caption>
             <category>General</category>
             <description>Interval in ms to scan for devices</description>
